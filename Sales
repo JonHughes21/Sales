@@ -1,51 +1,55 @@
+/*
+ * 
+*/
 import java.util.Scanner;
 public class Unit4Sales {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner (System.in);
 		
-		double product1 = 0; //2.98
-		double product2 = 0; //4.50
-		double product3 = 0; //9.98
-		double product4 = 0; //4.49
-		double product5 = 0; //6.87
+		double product1 = 0;
+		double product2 = 0;
+		double product3 = 0;
+		double product4 = 0;
+		double product5 = 0;
 		int product, sold;
 		
-		System.out.println("Enter product number (1-5) (0 to stop):");
+		System.out.println("Enter product number (1-5) (0 to stop): ");
 		product = input.nextInt();
 		
 		while (product != 0) {
 			
-			System.out.println("Enter quantity sold: ");
-			sold = input.nextInt();
-			
 			if (product > 0 && product <= 5) {
 				
+				System.out.println("Enter quantity sold: ");
+				sold = input.nextInt();
+				
 				switch (product) {
-					case 1:
-						product1 += (sold * 2.98);
-						break;
-					case 2:
-						product2 += (sold * 4.50);
-						break;
-					case 3:
-						product3 += (sold * 9.98);
-						break;
-					case 4:
-						product4 += (sold * 4.49);
-						break;
-					case 5:
-						product5 += (sold * 6.87);
-						break;
-					default:
-						break;
+				case 1:
+					product1 += (sold * 2.98);
+					break;
+				case 2:
+					product2 += (sold * 4.50);
+					break;
+				case 3:
+					product3 += (sold * 9.98);
+					break;
+				case 4:
+					product4 += (sold * 4.49);
+					break;
+				case 5:
+					product5 += (sold * 6.87);
+					break;
+				default:
+					break;				
 				}
+			}
 			else
 				System.out.println("Error: Invalid product number");
-			}
-			System.out.println("Enter product number (1-5) (0 to stop):");
+			
+			System.out.println("Enter product number (1-5) (0 to stop): ");
 			product = input.nextInt();
-		}	
+		}
 		System.out.printf("Product 1: $%.2f\n", product1);
 		System.out.printf("Product 2: $%.2f\n", product2);
 		System.out.printf("Product 3: $%.2f\n", product3);
